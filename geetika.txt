@@ -1,0 +1,68 @@
+Q.1  docker build -t alpine:geetika -f Dockerfile.txt . #image build
+     docker run -d -p 8809:80 --name geetc1 alpine:geetika #create container
+     docker run -it  alpine:geetika#gives output
+     Dockerfile: from alpine
+                 maintainer geetikaagarwal2000@gmail.com
+                 run mkdir /ques_1
+                 copy geet.sh /ques_1/geet.sh
+                 cmd alpine /ques_1/geet.sh
+      Shell file:   current_time=date +”%H:%M:%S”
+                    echo :${current_time}  >> Ques_1/question1.txt
+                    cat /Ques1/question1.txt
+
+
+Q.2  docker build -t adhoc:geetika -f Dockerfile.txt .
+     docker images
+     docker tag adhoc:geetika geetika2000/adhoc:geetika
+     docker login
+     username:geetika2000
+     password:
+     docker tag adhoc:geetika geetika2000/adhoc:geetika
+     docker push geetika2000/adhoc:geetika
+
+Q.3  docker pull dockerashu/ckad:v2 
+     docker run -d -p 8899:80 --name geetc3q3 dockerashu/ckad:v2
+     Dockerfile : from python
+                  maintainer geetikaagarwal2000@gmail.com
+                  run mkdir /mycode
+                  copy abc.py  /mycode/abc.py
+                  cmd python /mycode/abc.py
+     python file: from flask import Flask           # import flask
+                  app = Flask(__name__)             # create an app instance
+
+                  @app.route("/")                   # at the end point /
+                  def hello():                      # call method hello
+                  return "Hello World!"         # which returns "hello world"
+                  if __name__ == "__main__":        # on running python app.py
+                  app.run()                     # run the flask app
+     docker ps
+
+Q.4 Dockerfile: from centos
+                maintainer geetikaagarwal2000@gmail.com
+                run yum install httpd -y
+                copy web  /var/www/html/
+                expose 80
+                entrypoint httpd -DFOREGROUND
+    cd Desktop
+    cd beginner-html-site-styled
+    docker build -t geetika:q4 -f Dockerfile1
+    docker run -d -p 9977:80 geetika:q4
+
+Q.5   docker run -it --name geetikaq5 alpine sh
+      docker volume create geetq5
+      docker volume ls
+      docker run -it --name geetikaq5 -v geetq5:/data  alpine sh
+      cd data/
+      touch shell.sh
+      cd shell 
+      wc -l >>shell.sh
+      docker run -it --name geetikaq52 -v geetq5:/data2  java bash
+      docker volume inspect geetq5
+      docker run -it --name geetika53 -v /etc:/data2 java bash
+      ls
+      cd data2
+      cat passwd
+      
+    
+    
+    
